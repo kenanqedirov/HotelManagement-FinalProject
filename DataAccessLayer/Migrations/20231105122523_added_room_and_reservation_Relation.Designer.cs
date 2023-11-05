@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20231105122523_added_room_and_reservation_Relation")]
+    partial class added_room_and_reservation_Relation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,12 +33,6 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<string>("BlogDescription")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BlogImage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("BlogStatus")
-                        .HasColumnType("bit");
 
                     b.Property<string>("BlogTitle")
                         .HasColumnType("nvarchar(max)");
@@ -162,9 +158,6 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<string>("StaffName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("StaffStatus")
-                        .HasColumnType("bit");
 
                     b.Property<string>("StaffSurname")
                         .HasColumnType("nvarchar(max)");

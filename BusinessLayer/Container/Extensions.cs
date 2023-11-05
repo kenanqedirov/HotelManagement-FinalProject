@@ -17,17 +17,18 @@ namespace BusinessLayer.Container
 		public static void ContainerDependencies(this IServiceCollection services)
 		{
 			services.AddScoped<IBlogService,BlogManager>();
-			//services.AddScoped<IContactFormService,ContactFormManager>();
-			//services.AddScoped<IHotelAboutService,HotelAboutManager>();
-			//services.AddScoped<IReservationService,ReservationManager>();
-			//services.AddScoped<IStaffService,StaffManager>();
+			services.AddScoped<IContactFormService, ContactFormManager>();
+			services.AddScoped<IHotelAboutService, HotelAboutManager>();
+			services.AddScoped<IReservationService, ReservationManager>();
+			services.AddScoped<IRoomService, RoomManager>();
+			services.AddScoped<IStaffService, StaffManager>();
 
 			services.AddScoped<IBlogDAL,EFBlogDAL>();
-			//services.AddScoped<IContactFormDAL>();
-			//services.AddScoped<IHotelAboutDAL>();
-			//services.AddScoped<IReservationDAL>();
-			//services.AddScoped<IRoomDAL>();
-			//services.AddScoped<IStaffDAL>();
+			services.AddScoped<IContactFormDAL,EFContactFormDAL>();
+			services.AddScoped<IHotelAboutDAL, EFHotelAboutDAL>();
+			services.AddScoped<IReservationDAL,EFReservationDAL>();
+			services.AddScoped<IRoomDAL,EFRoomDAL>();
+			services.AddScoped<IStaffDAL,EFStaffDAL>();
 		}
 	}
 }

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="site-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <div class="heading-wrap text-center element-animate">
+                    <h4 class="sub-heading">Stay with our luxury rooms</h4>
+                    <h2 class="heading">Stay and Enjoy</h2>
+                    <p class="mb-5">Discover an exquisite escape at Hotel Luxury, where sophistication meets unparalleled comfort. From lavishly appointed rooms to exquisite dining experiences and top-tier services, our hotel is a sanctuary for those seeking opulence and modern convenience. With sophisticated event spaces, leisure facilities, and personalized concierge service, we redefine hospitality, ensuring a stay that exceeds expectations and creates enduring memories.</p>
+                    <p><a href="/AboutPage/Index/" class="btn btn-primary btn-sm">More About Us</a></p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <img src="~/luxury-hotel-master/images/f_img_1.png" alt="Image placeholder" class="img-md-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("_HomePageFeaturedRooms")
+@await Component.InvokeAsync("_HomePageOurRecentBlogs")

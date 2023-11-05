@@ -13,7 +13,11 @@ namespace EntityLayer.Concrete
         public int ReservationId { get; set; }
         public DateTime ReservationStartDay { get; set; }
         public DateTime ReservationEndDay { get; set; }
+
+        public int RoomId { get; set; }
+        public Room Room { get; set; }
+
         // UserId
-        // RoomId
+
     }
 }

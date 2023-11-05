@@ -16,5 +16,6 @@ namespace EntityLayer.Concrete
 		public string StaffImage { get; set; }
         public string StaffJob { get; set; }
         public string StaffDescription { get; set; }
+        public bool StaffStatus { get; set; }
     }
 }

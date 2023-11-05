@@ -19,5 +19,7 @@ namespace EntityLayer.Concrete
         public bool RoomStatus { get; set; }
         public int RoomCount { get; set; }
 
+
+        public List<Reservation> Reservations { get; set; }
     }
 }

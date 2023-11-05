@@ -1,0 +1,27 @@
+﻿@model List<Staff>
+<section class="site-section bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12 heading-wrap text-center">
+                <h4 class="sub-heading">Our Kind Staff</h4>
+                <h2 class="heading">Our Staff</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="post-entry">
+                        <img src="@item.StaffImage" alt="Image placeholder" class="img-fluid">
+                        <div class="body-text">
+                            <div class="category">@item.StaffJob</div>
+                            <h3 class="mb-3"><a href="#">@item.StaffName @item.StaffSurname</a></h3>
+                            <p class="mb-4">@item.StaffDescription.Substring(0,item.StaffDescription.Substring(0,150).LastIndexOf(" "))...</p>
+                            <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
+                        </div>
+                    </div>
+                </div>
+            }    
+        </div>
+    </div>
+</section>

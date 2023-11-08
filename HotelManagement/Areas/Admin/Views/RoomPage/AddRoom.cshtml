@@ -1,0 +1,47 @@
+﻿@model Room
+@{
+    ViewData["Title"] = "AddRoom";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+<h1>Add Room Page</h1>
+<form method="post" enctype="multipart/form-data">
+    <div>
+        @Html.Label("Room Type")
+        <input type="text" asp-for="RoomType" class="form-control" />
+        <span asp-validation-for="RoomType" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Room Area")
+        <input type="number" asp-for="RoomArea" class="form-control" />
+        <span asp-validation-for="RoomArea" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Room Price")
+        <input type="number" asp-for="RoomPrice" class="form-control" />
+        <span asp-validation-for="RoomPrice" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Room About")
+        <input type="text" asp-for="RoomAbout" class="form-control" />
+        <span asp-validation-for="RoomAbout" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Room Count")
+        <input type="number" asp-for="RoomCount" class="form-control" />
+        <span asp-validation-for="RoomCount" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Room Image")
+        <input type="file" asp-for="RoomImageFile" class="form-control" />
+        <span asp-validation-for="RoomImageFile" style="color:red"></span>
+        <br />
+    </div>
+    <button class="btn btn-outline-success">Add Room</button>
+</form>
+
+

@@ -1,0 +1,46 @@
+﻿@model List<Room>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Room Type</th>
+        <th>Room Area</th>
+        <th>Room Price</th>
+        <th>Room About</th>
+        <th>Room Image</th>
+        <th>Room Status</th>
+        <th>Room Count</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.RoomId</th>
+            <td>@item.RoomType</td>
+            <td>@item.RoomArea</td>
+            <td>@item.RoomPrice $</td>
+            <td>@item.RoomAbout.Substring(0,item.RoomAbout.Substring(0,50).LastIndexOf(" "))...</td>
+            <td><img src="@item.RoomImage" alt="Room Image" style="width:50px;height:50px" /></td>
+            @{
+                if (item.RoomStatus == true)
+                {
+                    <td>Full</td>
+                }
+                else
+                {
+                    <td>Empty</td>
+                }
+            }
+            <td>@item.RoomCount</td>
+            <td><a href="/Admin/RoomPage/UpdateRoom/@item.RoomId" class="btn btn-primary">Update</a></td>
+            <td><a href="/Admin/RoomPage/DeleteRoom/@item.RoomId" class="btn btn-warning">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/RoomPage/AddRoom/" class="btn btn-success">Add New Room</a>
+

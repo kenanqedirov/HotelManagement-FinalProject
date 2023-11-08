@@ -1,0 +1,29 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "DetailBlog";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Detail Blog</h1>
+
+@Html.Label("Blog Id")
+<br />
+<input type="text" asp-for="BlogId" class="form-control" disabled />
+<br />
+@Html.Label("Blog Category")
+<br />
+<input type="text" asp-for="BlogCategory" class="form-control" disabled />
+<br />
+@Html.Label("Blog Title")
+<br />
+<input type="text" asp-for="BlogTitle" class="form-control" disabled />
+<br />
+@Html.Label("Blog Description")
+<br />
+<input type="text" asp-for="BlogDescription" class="form-control" disabled />
+<br />
+@Html.Label("Blog Image")
+<br />
+<img src="@Model.BlogImage" alt="Room Image" style="width:400px " />
+<br />
+<a href="/Admin/BlogPage/Index/" class="btn btn-dark">Back</a>

@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace BusinessLayer.ValidationRules
 {
-    public class RoomValidator : AbstractValidator<Room>
+    public class AddRoomValidator : AbstractValidator<Room>
     {
-        public RoomValidator()
+        public AddRoomValidator()
         {
             RuleFor(a => a.RoomType).NotEmpty().WithMessage("This field is not empty");
             RuleFor(a => a.RoomArea).NotEmpty().WithMessage("This field is not empty");

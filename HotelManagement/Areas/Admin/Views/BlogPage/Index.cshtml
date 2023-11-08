@@ -1,0 +1,44 @@
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Blog List</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Blog Category</th>
+        <th>Blog Title</th>
+        <th>Blog Description</th>
+        <th>Blog Image</th>
+        <th>Blog Status</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.BlogId</th>
+            <td>@item.BlogCategory</td>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogDescription.Substring(0,50)...</td>
+            <td><img src="@item.BlogImage" alt="Blog Image" style="width:50px;height:50px"/></td>
+            @{
+                if (item.BlogStatus is true)
+                {
+                    <td><a href="/Admin/BlogPage/ChangeBlogStatus/@item.BlogId" style="color:green" class="btn btn-purple">Do Passive</a></td>
+                }
+                else
+                {
+                    <td><a href="/Admin/BlogPage/ChangeBlogStatus/@item.BlogId" style="color:red" class="btn btn-cyan">Do Active</a></td>
+                }
+            }
+            <td><a href="/Admin/BlogPage/UpdateBlog/@item.BlogId" class="btn btn-primary">Update</a></td>
+            <td><a href="/Admin/BlogPage/DeleteBlog/@item.BlogId" class="btn btn-warning">Delete</a></td>
+            <td><a href="/Admin/BlogPage/DetailBlog/@item.BlogId" class="btn btn-info">Details</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/BlogPage/AddBlog/" class="btn btn-success">Add Blog</a>

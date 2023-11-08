@@ -1,0 +1,41 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "UpdateBlog";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+<h1>Update Blog Page</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <input type="hidden" asp-for="BlogId" />
+        <input type="hidden" asp-for="BlogImage" />
+        <input type="hidden" asp-for="BlogStatus"/>
+    </div>
+    <div>
+        @Html.Label("Blog Category")
+        <input type="text" asp-for="BlogCategory" class="form-control" />
+        <span asp-validation-for="BlogCategory" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Title")
+        <input type="text" asp-for="BlogTitle" class="form-control" />
+        <span asp-validation-for="BlogTitle" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Description")
+        <textarea asp-for="BlogDescription" class="form-control"></textarea>
+        <span asp-validation-for="BlogDescription" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Image")
+        <input type="file" asp-for="BlogImageFile" class="form-control" />
+        <img src="~/images/blog_images/@Model.BlogImage" style="width:400px" />
+        <span asp-validation-for="BlogImageFile" style="color:red"></span>
+        <br />
+    </div>
+    <button class="btn btn-success">Update Blog</button>
+</form>

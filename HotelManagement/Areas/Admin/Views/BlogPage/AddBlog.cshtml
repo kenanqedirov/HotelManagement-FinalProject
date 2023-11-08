@@ -1,0 +1,35 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Add Blog</h1>
+<form method="post" enctype="multipart/form-data">
+    <div>
+        @Html.Label("Blog Category")
+        <input type="text" asp-for="BlogCategory" class="form-control" />
+        <span asp-validation-for="BlogCategory" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Title")
+        <input type="text" asp-for="BlogTitle" class="form-control" />
+        <span asp-validation-for="BlogTitle" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Description")
+        <textarea asp-for="BlogDescription" class="form-control"></textarea>
+        <span asp-validation-for="BlogDescription" style="color:red"></span>
+        <br />
+    </div>
+    <div>
+        @Html.Label("Blog Image")
+        <input type="file" asp-for="BlogImageFile" class="form-control" />
+        <span asp-validation-for="BlogImageFile" style="color:red"></span>
+        <br />
+    </div>  
+    <button class="btn btn-outline-success">Add Blog</button>
+</form>
+

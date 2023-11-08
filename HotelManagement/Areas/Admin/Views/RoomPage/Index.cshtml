@@ -16,6 +16,7 @@
         <th>Room Count</th>
         <th>Update</th>
         <th>Delete</th>
+        <th>Details</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -39,6 +40,7 @@
             <td>@item.RoomCount</td>
             <td><a href="/Admin/RoomPage/UpdateRoom/@item.RoomId" class="btn btn-primary">Update</a></td>
             <td><a href="/Admin/RoomPage/DeleteRoom/@item.RoomId" class="btn btn-warning">Delete</a></td>
+            <td><a href="/Admin/RoomPage/DetailRoom/@item.RoomId" class="btn btn-info">Details</a></td>
         </tr>
     }
 </table>

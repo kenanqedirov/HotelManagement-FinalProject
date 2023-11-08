@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 namespace HotelManagement.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class RoomPageController : Controller
     {
         private readonly IRoomService _roomManager;
@@ -37,7 +38,7 @@ namespace HotelManagement.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddRoom(Room room)
         {
-            RoomValidator validationRules = new RoomValidator();
+            AddRoomValidator validationRules = new AddRoomValidator();
             ValidationResult result = validationRules.Validate(room);
             if (result.IsValid)
             {
@@ -128,6 +129,12 @@ namespace HotelManagement.Areas.Admin.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
+            return View(room);
+        }
+        [HttpGet]
+        public IActionResult DetailRoom(int id)
+        {
+            var room = _roomManager.TGetById(id);
             return View(room);
         }
     }

@@ -1,0 +1,41 @@
+﻿@model Room
+@{
+    ViewData["Title"] = "DetailRoom";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Details Room</h1>
+
+@Html.Label("Room Id")
+<br />
+<input type="text" asp-for="RoomId" class="form-control" disabled/>
+<br />
+@Html.Label("Room Type")
+<br />
+<input type="text" asp-for="RoomType" class="form-control" disabled />
+<br />
+@Html.Label("Room Area")
+<br />
+<input type="text" asp-for="RoomArea" class="form-control" disabled />
+<br />
+@Html.Label("Room Price")
+<br />
+<input type="text" asp-for="RoomPrice" class="form-control" disabled />
+<br />
+@Html.Label("Room About")
+<br />
+<textarea asp-for="RoomAbout" class="form-control" disabled></textarea>
+<br />
+@Html.Label("Room Status")
+<br />
+<input type="text" asp-for="RoomStatus" class="form-control" disabled />
+<br />
+@Html.Label("Room Count")
+<br />
+<input type="text" asp-for="RoomCount" class="form-control" disabled />
+<br />
+@Html.Label("Room Image")
+<br />
+<img src="@Model.RoomImage" alt="Room Image" style="width:400px "/>
+<br />
+<a href="/Admin/RoomPage/Index/" class="btn btn-dark">Back</a>

@@ -1,0 +1,35 @@
+﻿@model List<Staff>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Staff Name</th>
+        <th>Staff Surname</th>
+        <th>Staff Job</th>
+        <th>Staff Description</th>
+        <th>Staff Image</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.StaffId</th>
+            <td>@item.StaffName</td>
+            <td>@item.StaffSurname</td>
+            <td>@item.StaffJob</td>
+            <td>@item.StaffDescription.Substring(0,50)...</td>
+            <td><img src="@item.StaffImage" alt="Staff Image" style="width:50px;height:50px" /></td>
+            <td><a href="/Admin/StaffPage/UpdateStaff/@item.StaffId" class="btn btn-primary">Update</a></td>
+            <td><a href="/Admin/StaffPage/DeleteStaff/@item.StaffId" class="btn btn-warning">Delete</a></td>
+            <td><a href="/Admin/StaffPage/DetailStaff/@item.StaffId" class="btn btn-info">Details</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/StaffPage/AddStaff/" class="btn btn-success">Add Staff</a>
+

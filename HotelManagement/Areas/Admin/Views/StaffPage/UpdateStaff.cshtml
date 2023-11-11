@@ -1,12 +1,17 @@
 ﻿@model Staff
 @{
-    ViewData["Title"] = "AddStaff";
+    ViewData["Title"] = "UpdateStaff";
     Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
 }
 
-<h1>Add Staff</h1>
+<h1>Update Staff Page</h1>
 
 <form method="post" enctype="multipart/form-data">
+    <div>
+        <input type="hidden" asp-for="StaffId" />
+        <input type="hidden" asp-for="StaffImage" />
+        <input type="hidden" asp-for="StaffStatus" />
+    </div>
     <div>
         @Html.Label("Staff Name")
         <input type="text" asp-for="StaffName" class="form-control" />
@@ -21,7 +26,7 @@
     </div>
     <div>
         @Html.Label("Staff Job")
-        <input type="text" asp-for="StaffJob" class="form-control" />
+        <input type="text" asp-for="StaffJob" class="form-control"/>
         <span asp-validation-for="StaffJob" style="color:red"></span>
         <br />
     </div>
@@ -34,8 +39,8 @@
     <div>
         @Html.Label("Staff Image")
         <input type="file" asp-for="StaffImageFile" class="form-control" />
-        <span asp-validation-for="StaffImageFile" style="color:red"></span>
+        <img src="~/images/staff_images/@Model.StaffImage" style="width:400px" />
         <br />
     </div>
-    <button class="btn btn-outline-success">Add Staff</button>
+    <button class="btn btn-success">Update Staff</button>
 </form>

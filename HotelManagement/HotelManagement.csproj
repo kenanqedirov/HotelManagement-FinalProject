@@ -33,6 +33,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="wwwroot\images\blog_images\" />
+    <Folder Include="wwwroot\images\staff_images\" />
     <Folder Include="wwwroot\images\room_images\" />
   </ItemGroup>
 

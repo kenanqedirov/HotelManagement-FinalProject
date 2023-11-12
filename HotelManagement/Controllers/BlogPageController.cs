@@ -1,9 +1,11 @@
 ﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace HotelManagement.Controllers
 {
+    [AllowAnonymous]
     public class BlogPageController : Controller
     {
         private IBlogService _blogManager;

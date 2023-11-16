@@ -1,0 +1,20 @@
+﻿@model AddRoleToUserViewModel
+@{
+    ViewData["Title"] = "AddRoleToUser";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Add Role To User</h1>
+<form class="form-control" method="post">
+    <input type="text" asp-for="MyUserId" hidden/>
+    <input class="form-control" type="text" asp-for="@Model.MyUsername" disabled/>
+    <br />
+    <select class="form-control" asp-for="@Model.MyRoleId">
+        @foreach (var item in Model.MyRoleList)
+        {
+            <option value="@item.Name">@item.Name</option>
+        }        
+    </select>
+    <br />
+    <button class="btn btn-success">Add Role To User</button>
+</form>

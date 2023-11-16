@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,10 @@ namespace HotelManagement
             });
             services.AddMvc();
             services.ContainerDependencies();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Login/AccessDenied/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +59,7 @@ namespace HotelManagement
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

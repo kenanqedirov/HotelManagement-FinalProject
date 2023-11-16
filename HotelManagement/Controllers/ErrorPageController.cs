@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HotelManagement.Controllers
 {
-    [Authorize(Roles ="Member,Admin")]
-    [Route("[controller]/[action]")]
-    public class BookNowPageController : Controller
+    [AllowAnonymous]
+    public class ErrorPageController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Error404(int code)
         {
             return View();
         }

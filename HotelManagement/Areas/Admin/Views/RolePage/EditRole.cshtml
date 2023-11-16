@@ -1,0 +1,13 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<h1>Edit Role Page</h1>
+<form method="post">
+    <input type="text" hidden/>
+    @Html.Label("Role Name")
+    <input type="text" asp-for="Name" required />
+    <button class="btn btn-success">Edit Role</button>
+</form>

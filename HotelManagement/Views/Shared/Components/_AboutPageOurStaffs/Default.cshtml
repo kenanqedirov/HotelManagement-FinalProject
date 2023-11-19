@@ -12,12 +12,12 @@
             {
                 <div class="col-md-4">
                     <div class="post-entry">
-                        <img src="@item.StaffImage" alt="Image placeholder" class="img-fluid">
+                        <img src="~/images/staff_images/@item.StaffImage" alt="Image placeholder" class="img-fluid">
                         <div class="body-text">
                             <div class="category">@item.StaffJob</div>
                             <h3 class="mb-3"><a href="#">@item.StaffName @item.StaffSurname</a></h3>
-                            <p class="mb-4">@item.StaffDescription.Substring(0,item.StaffDescription.Substring(0,150).LastIndexOf(" "))...</p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
+                            <p class="mb-4">@item.StaffDescription.Substring(0,item.StaffDescription.Substring(0,50).LastIndexOf(" "))...</p>
+                            <p><a href="/StaffPage/ReadMoreForStaff/@item.StaffId" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
                         </div>
                     </div>
                 </div>

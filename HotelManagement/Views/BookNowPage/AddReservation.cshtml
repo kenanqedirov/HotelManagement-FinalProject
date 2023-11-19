@@ -1,0 +1,34 @@
+﻿@model AddReservationViewModel
+@{
+    ViewData["Title"] = "AddReservation";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+<form method="post">
+    <input type="hidden" asp-for="RoomId" />
+    @Html.Label("Room Type")
+    <input type="text" asp-for="MyRoom.RoomType" disabled />
+    <br />
+    @Html.Label("Room Area")
+    <input type="text" asp-for="MyRoom.RoomArea" disabled />
+    <br />
+    @Html.Label("Room Price")
+    <input type="text" asp-for="MyRoom.RoomPrice" disabled />
+    <br />
+    @Html.Label("Room Count")
+    <input type="text" asp-for="MyRoom.RoomCount" disabled />
+    <br />
+    @Html.Label("Room Image")
+    <img src="~/images/room_images/@Model.MyRoom.RoomImage" style="width:400px;height:400px" alt="Room Image" />
+    <br />
+    @Html.Label("Start Day")
+    <input type="date" asp-for="@Model.StartDay" />
+    <span asp-validation-for="StartDay"></span>
+    <br />
+    @Html.Label("End Day")
+    <input type="date" asp-for="@Model.EndDay" />
+    <span asp-validation-for="EndDay"></span>
+    <br />
+    <button class="btn btn-success">Reserv Now</button>
+</form>
+
+

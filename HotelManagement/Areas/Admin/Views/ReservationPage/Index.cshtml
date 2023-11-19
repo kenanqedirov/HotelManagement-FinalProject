@@ -1,0 +1,37 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Room Type</th>
+        <th>Room Area</th>
+        <th>Room Price</th>
+        <th>Room Count</th>
+        <th>Room Image</th>
+        <th>Start Day</th>
+        <th>End Day</th>
+        <th>Delete Reservation</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ReservationId</td>
+            <td>@item.Room.RoomType</td>
+            <td>@item.Room.RoomArea</td>
+            <td>@item.Room.RoomPrice $</td>
+            <td>@item.Room.RoomCount</td>
+            <td><img src="~/images/room_images/@item.Room.RoomImage" style="width:100px; height:50px" alt="Room Image" /></td>
+            <td>@item.ReservationStartDay</td>
+            <td>@item.ReservationEndDay</td>
+            <td><a href="/Admin/ReservationPage/DeleteReservation/@item.ReservationId" class="btn btn-warning">Delete</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/ReservationPage/AddReservation/" class="btn btn-success">Add Reservation</a>

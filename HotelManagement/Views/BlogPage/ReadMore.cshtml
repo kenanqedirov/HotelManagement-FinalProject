@@ -1,0 +1,34 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "ReadMore";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<body>
+
+    <section class="site-section py-lg">
+        <div class="container">
+
+            <div class="row blog-entries">
+                <div class="col-md-12 col-lg-8 main-content">
+                    <h1 class="mb-4">@Model.BlogTitle</h1>              
+                    <div class="post-meta">
+                        <span class="category">@Model.BlogCategory</span>
+                    </div>
+                    <div class="post-content-body">
+                        <div class="row mb-5">
+                            <div class="col-md-12 mb-4 element-animate">
+                                <img src="~/images/blog_images/@Model.BlogImage" alt="Image placeholder" class="img-fluid">
+                            </div>
+                        </div>
+                       <p>@Model.BlogDescription</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

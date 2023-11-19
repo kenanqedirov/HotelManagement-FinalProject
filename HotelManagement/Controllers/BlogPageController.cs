@@ -20,5 +20,10 @@ namespace HotelManagement.Controllers
             var values = _blogManager.TGetList().Where(a=>a.BlogStatus == true).ToList();
             return View(values);
         }
+        public IActionResult ReadMore(int id)
+        {
+            var blog = _blogManager.TGetById(id);
+            return View(blog);
+        }
     }
 }

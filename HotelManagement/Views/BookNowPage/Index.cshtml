@@ -1,79 +1,32 @@
-﻿
+﻿@model List<Room>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UILayout.cshtml";
+    int count = 0;
 }
 
-<section class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="mb-5">Reservation Form</h2>
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Room Type</th>
+        <th>Room Area</th>
+        <th>Room Price</th>
+        <th>Room Count</th>
+        <th>Room Image</th>
+        <th>Choose Rooms</th>
+    </tr>
 
-                            <label for="">Arrival Date</label>
-                            <div style="position: relative;">
-                                <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                                <input type='text' class="form-control" id='arrival_date' />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 form-group">
-
-                            <label for="">Departure Date</label>
-                            <div style="position: relative;">
-                                <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                                <input type='text' class="form-control" id='departure_date' />
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label for="room">Room</label>
-                            <select name="" id="room" class="form-control">
-                                <option value="">1 Room</option>
-                                <option value="">2 Rooms</option>
-                                <option value="">3 Rooms</option>
-                                <option value="">4 Rooms</option>
-                                <option value="">5 Rooms</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-6 form-group">
-                            <label for="room">Guests</label>
-                            <select name="" id="room" class="form-control">
-                                <option value="">1 Guest</option>
-                                <option value="">2 Guests</option>
-                                <option value="">3 Guests</option>
-                                <option value="">4 Guests</option>
-                                <option value="">5+ Guests</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control ">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="message">Write a Note</label>
-                            <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="submit" value="Reserve Now" class="btn btn-primary">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.RoomType</td>
+            <td>@item.RoomArea</td>
+            <td>@item.RoomPrice $</td>
+            <td>@item.RoomCount</td>
+            <td><img src="~/images/room_images/@item.RoomImage" style="width:100px; height:50px" alt="Room Image" /></td>
+            <td><a href="/BookNowPage/AddReservation/@item.RoomId" class="btn btn-warning">Choose Room</a></td>
+        </tr>
+    }
+</table>

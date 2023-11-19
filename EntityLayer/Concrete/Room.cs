@@ -21,10 +21,12 @@ namespace EntityLayer.Concrete
         public bool RoomStatus { get; set; }
         public int RoomCount { get; set; }
         public bool isRoomActive { get; set; }
+        public bool isReserved { get; set; }
 
+        public List<Reservation> Reservations { get; set; }
 
         [NotMapped]
         public IFormFile RoomImageFile { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        
     }
 }

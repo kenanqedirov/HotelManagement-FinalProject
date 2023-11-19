@@ -38,7 +38,12 @@ namespace BusinessLayer.Concrete
 			return _reservationDAL.GetList();
 		}
 
-		public void TUpdate(Reservation t)
+        public List<Reservation> TGetReservationWithRoom()
+        {
+			return _reservationDAL.GetReservationWithRoom();
+        }
+
+        public void TUpdate(Reservation t)
 		{
 			_reservationDAL.Update(t);
 		}

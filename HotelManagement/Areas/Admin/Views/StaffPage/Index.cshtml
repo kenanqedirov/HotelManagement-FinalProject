@@ -24,7 +24,7 @@
             <td>@item.StaffSurname</td>
             <td>@item.StaffJob</td>
             <td>@item.StaffDescription.Substring(0,50)...</td>
-            <td><img src="@item.StaffImage" alt="Staff Image" style="width:50px;height:50px" /></td>
+            <td><img src="~/images/staff_images/@item.StaffImage" alt="Staff Image" style="width:50px;height:50px" /></td>
             <td><a href="/Admin/StaffPage/UpdateStaff/@item.StaffId" class="btn btn-primary">Update</a></td>
             <td><a href="/Admin/StaffPage/DeleteStaff/@item.StaffId" class="btn btn-warning">Delete</a></td>
             <td><a href="/Admin/StaffPage/DetailStaff/@item.StaffId" class="btn btn-info">Details</a></td>

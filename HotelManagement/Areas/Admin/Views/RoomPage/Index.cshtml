@@ -26,7 +26,7 @@
             <td>@item.RoomArea</td>
             <td>@item.RoomPrice $</td>
             <td>@item.RoomAbout.Substring(0,item.RoomAbout.Substring(0,50).LastIndexOf(" "))...</td>
-            <td><img src="@item.RoomImage" alt="Room Image" style="width:50px;height:50px" /></td>
+            <td><img src="~/images/room_images/@item.RoomImage" alt="Room Image" style="width:50px;height:50px" /></td>
             @{
                 if (item.RoomStatus == true)
                 {

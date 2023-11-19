@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
 	public interface IReservationDAL : IGenericDAL<Reservation>
 	{
+		List<Reservation> GetReservationWithRoom();
 	}
 }
